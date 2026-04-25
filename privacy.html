@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Privacy Policy — Family Board</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Privacy policy for Family Board, the shared to-do app for families.">
+	<link rel="icon" type="image/png" href="icon.png">
+	<link rel="apple-touch-icon" href="icon.png">
+	<style>
+		:root {
+			color-scheme: dark;
+			--bg: #121214;
+			--surface: #1c1c1f;
+			--text: #f2f2ed;
+			--subtle: rgba(242, 242, 237, 0.55);
+			--separator: rgba(242, 242, 237, 0.08);
+			--link: #6aa9ff;
+		}
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		html, body {
+			background: var(--bg);
+			color: var(--text);
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+			line-height: 1.6;
+			-webkit-font-smoothing: antialiased;
+		}
+		main {
+			max-width: 700px;
+			margin: 0 auto;
+			padding: 64px 24px 96px;
+		}
+		.crumb {
+			color: var(--subtle);
+			font-size: 14px;
+			margin-bottom: 24px;
+		}
+		.crumb a { color: var(--subtle); text-decoration: underline; }
+		.crumb a:hover { color: var(--text); }
+		h1 {
+			font-size: 34px;
+			font-weight: 700;
+			letter-spacing: -0.02em;
+			margin-bottom: 8px;
+		}
+		.effective {
+			color: var(--subtle);
+			font-size: 14px;
+			margin-bottom: 32px;
+		}
+		section { margin-top: 36px; }
+		h2 {
+			font-size: 20px;
+			font-weight: 600;
+			margin-bottom: 12px;
+			letter-spacing: -0.01em;
+		}
+		p, li {
+			font-size: 16px;
+			margin-bottom: 12px;
+			color: var(--text);
+		}
+		ul { padding-left: 20px; margin-bottom: 12px; }
+		li { margin-bottom: 6px; }
+		a {
+			color: var(--link);
+			text-decoration: none;
+		}
+		a:hover { text-decoration: underline; }
+		.summary {
+			background: var(--surface);
+			border-radius: 12px;
+			padding: 20px 24px;
+			margin-bottom: 24px;
+		}
+		.summary h2 { margin-bottom: 8px; font-size: 16px; }
+		.summary p { color: var(--subtle); margin-bottom: 0; }
+		footer {
+			margin-top: 64px;
+			padding-top: 24px;
+			border-top: 1px solid var(--separator);
+			color: var(--subtle);
+			font-size: 13px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div class="crumb"><a href="./">← Back to Family Board support</a></div>
+
+		<h1>Privacy Policy</h1>
+		<div class="effective">Effective 25 April 2026 · Last updated 25 April 2026</div>
+
+		<div class="summary">
+			<h2>The short version</h2>
+			<p>
+				Family Board doesn't track you, doesn't show ads, and doesn't sell or share your data. The boards
+				and items you create are visible only to people you invite. You can ask me to delete your account
+				and data at any time by emailing
+				<a href="mailto:daniel.klevebring@gmail.com">daniel.klevebring@gmail.com</a>.
+			</p>
+		</div>
+
+		<section>
+			<h2>Who's responsible</h2>
+			<p>
+				Family Board is operated by Daniel Klevebring as a personal project. I'm the data controller for
+				the purposes of GDPR. You can reach me at
+				<a href="mailto:daniel.klevebring@gmail.com">daniel.klevebring@gmail.com</a>.
+			</p>
+		</section>
+
+		<section>
+			<h2>What data the app collects</h2>
+			<p>When you sign in with Apple and use Family Board, the app stores:</p>
+			<ul>
+				<li>
+					<strong>An Apple-provided account identifier</strong> — a stable string Apple gives the app to
+					recognise you across sessions. It's not your email or your real Apple ID; it's an opaque ID
+					unique to you and this app.
+				</li>
+				<li>
+					<strong>A display name you set</strong> — shown next to items you add to a board, so others know
+					who added what. You can change it in Settings.
+				</li>
+				<li>
+					<strong>Boards you create or join</strong> — the board name and a membership record linking your
+					account to the board.
+				</li>
+				<li>
+					<strong>Items you add to boards</strong> — the text you typed, when it was added, who added it,
+					and whether it's archived or active.
+				</li>
+				<li>
+					<strong>Invite codes</strong> — when you share a board, a short code is generated so the
+					recipient can join. Codes expire and become single-use after redemption.
+				</li>
+			</ul>
+			<p>
+				The app does <strong>not</strong> collect your email, phone number, contacts, location, photos, or
+				any analytics or tracking data.
+			</p>
+		</section>
+
+		<section>
+			<h2>Where data is stored</h2>
+			<p>
+				All data is stored in a <a href="https://supabase.com">Supabase</a> Postgres database hosted in the
+				EU. Supabase processes the data on my behalf as a sub-processor. They don't use your data for any
+				purpose except providing the database service.
+			</p>
+			<p>
+				Sign-in is handled by Apple's <a href="https://support.apple.com/en-us/HT210318">Sign in with
+				Apple</a> service. Apple's privacy policy applies to the authentication step.
+			</p>
+		</section>
+
+		<section>
+			<h2>Who can see your boards</h2>
+			<p>
+				Only members of a board can see that board's items. When someone you invite redeems the link, they
+				become a member. Removing them (or them leaving) revokes access immediately. Database-level
+				row-level-security rules enforce this — no one outside the membership list can read the data.
+			</p>
+		</section>
+
+		<section>
+			<h2>How long data is kept</h2>
+			<p>
+				Items and boards stay until you delete them. Archived items remain in the archive section until you
+				permanently delete them. If you delete your account, all your owned boards (and their items) are
+				removed; boards you joined as a member are unaffected for the other members, but your membership
+				row is removed.
+			</p>
+		</section>
+
+		<section>
+			<h2>Your rights</h2>
+			<p>You can:</p>
+			<ul>
+				<li><strong>See</strong> your data — it's all visible in the app.</li>
+				<li><strong>Edit</strong> your display name, your items, and your board names from inside the app.</li>
+				<li>
+					<strong>Delete</strong> individual items, leave boards, or delete entire boards you own from the
+					app.
+				</li>
+				<li>
+					<strong>Delete your whole account and all your data</strong> — email
+					<a href="mailto:daniel.klevebring@gmail.com">daniel.klevebring@gmail.com</a>
+					with a request and I'll remove everything within a few days. Account deletion is also supported
+					directly from a future app update.
+				</li>
+				<li>
+					<strong>Export</strong> your data on request — same email above. I'll send you a JSON dump.
+				</li>
+			</ul>
+			<p>
+				If you're in the EU/UK, you also have the right to lodge a complaint with your data-protection
+				authority.
+			</p>
+		</section>
+
+		<section>
+			<h2>Children</h2>
+			<p>
+				Family Board is intended for use by families and may be used by people under 16. The app doesn't
+				ask for, and doesn't store, any information identifying a child beyond a display name a parent or
+				the child enters. If you believe data has been stored about a child without parental consent, email
+				me and I'll remove it.
+			</p>
+		</section>
+
+		<section>
+			<h2>Changes to this policy</h2>
+			<p>
+				If this policy changes meaningfully, the "Last updated" date at the top will move and a notice will
+				appear in the app on next launch. Material changes won't apply retroactively to data already
+				collected.
+			</p>
+		</section>
+
+		<section>
+			<h2>Contact</h2>
+			<p>
+				Questions, deletion requests, or privacy concerns:
+				<a href="mailto:daniel.klevebring@gmail.com">daniel.klevebring@gmail.com</a>
+			</p>
+		</section>
+
+		<footer>
+			<p>Family Board for iOS · © 2026 Daniel Klevebring</p>
+		</footer>
+	</main>
+</body>
+</html>
