@@ -5,6 +5,8 @@
 	<title>Family Board — Support</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Support for Family Board, the shared to-do app for families.">
+	<link rel="icon" type="image/png" href="icon.png">
+	<link rel="apple-touch-icon" href="icon.png">
 	<style>
 		:root {
 			color-scheme: dark;
@@ -33,16 +35,32 @@
 			border-bottom: 1px solid var(--separator);
 			padding-bottom: 32px;
 			margin-bottom: 40px;
+			display: flex;
+			align-items: center;
+			gap: 20px;
 		}
+		header .icon {
+			width: 88px;
+			height: 88px;
+			border-radius: 22.4%; /* iOS continuous-corner squircle ratio */
+			flex-shrink: 0;
+			box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 6px 16px rgba(0,0,0,0.3);
+		}
+		header .text { flex: 1; min-width: 0; }
 		h1 {
-			font-size: 38px;
+			font-size: 34px;
 			font-weight: 700;
 			letter-spacing: -0.02em;
-			margin-bottom: 8px;
+			margin-bottom: 6px;
 		}
 		header p {
 			color: var(--subtle);
-			font-size: 17px;
+			font-size: 16px;
+		}
+		@media (max-width: 480px) {
+			header { gap: 16px; }
+			header .icon { width: 72px; height: 72px; }
+			h1 { font-size: 28px; }
 		}
 		section {
 			margin-top: 40px;
@@ -126,8 +144,11 @@
 <body>
 	<main>
 		<header>
-			<h1>Family Board</h1>
-			<p>The shared to-do app for everyone in your home.</p>
+			<img class="icon" src="icon.png" alt="Family Board app icon" width="88" height="88">
+			<div class="text">
+				<h1>Family Board</h1>
+				<p>The shared to-do app for everyone in your home.</p>
+			</div>
 		</header>
 
 		<section>
