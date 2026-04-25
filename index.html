@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Family Board — Support</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Support for Family Board, the shared to-do app for families.">
+	<style>
+		:root {
+			color-scheme: dark;
+			--bg: #121214;
+			--surface: #1c1c1f;
+			--text: #f2f2ed;
+			--subtle: rgba(242, 242, 237, 0.55);
+			--separator: rgba(242, 242, 237, 0.08);
+			--accent: #f2f2ed;
+			--link: #6aa9ff;
+		}
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		html, body {
+			background: var(--bg);
+			color: var(--text);
+			font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+			line-height: 1.5;
+			-webkit-font-smoothing: antialiased;
+		}
+		main {
+			max-width: 640px;
+			margin: 0 auto;
+			padding: 64px 24px 96px;
+		}
+		header {
+			border-bottom: 1px solid var(--separator);
+			padding-bottom: 32px;
+			margin-bottom: 40px;
+		}
+		h1 {
+			font-size: 38px;
+			font-weight: 700;
+			letter-spacing: -0.02em;
+			margin-bottom: 8px;
+		}
+		header p {
+			color: var(--subtle);
+			font-size: 17px;
+		}
+		section {
+			margin-top: 40px;
+		}
+		section h2 {
+			font-size: 13px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--subtle);
+			margin-bottom: 16px;
+		}
+		section p, section li {
+			font-size: 16px;
+			margin-bottom: 12px;
+			color: var(--text);
+		}
+		section ul {
+			list-style: none;
+		}
+		details {
+			border-top: 1px solid var(--separator);
+			padding: 16px 0;
+		}
+		details:last-of-type {
+			border-bottom: 1px solid var(--separator);
+		}
+		details summary {
+			cursor: pointer;
+			font-weight: 500;
+			font-size: 16px;
+			list-style: none;
+			padding-right: 24px;
+			position: relative;
+		}
+		details summary::-webkit-details-marker { display: none; }
+		details summary::after {
+			content: "+";
+			position: absolute;
+			right: 0;
+			top: 0;
+			color: var(--subtle);
+			font-weight: 300;
+			font-size: 22px;
+			line-height: 1;
+		}
+		details[open] summary::after { content: "−"; }
+		details > p, details > ul {
+			margin-top: 12px;
+			color: var(--subtle);
+		}
+		a {
+			color: var(--link);
+			text-decoration: none;
+		}
+		a:hover { text-decoration: underline; }
+		.contact-card {
+			background: var(--surface);
+			border-radius: 12px;
+			padding: 20px 24px;
+		}
+		.contact-card .label {
+			font-size: 13px;
+			color: var(--subtle);
+			margin-bottom: 4px;
+		}
+		.contact-card .value {
+			font-size: 18px;
+			font-weight: 500;
+		}
+		footer {
+			margin-top: 64px;
+			padding-top: 24px;
+			border-top: 1px solid var(--separator);
+			color: var(--subtle);
+			font-size: 13px;
+		}
+		footer p { margin-bottom: 4px; }
+	</style>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Family Board</h1>
+			<p>The shared to-do app for everyone in your home.</p>
+		</header>
+
+		<section>
+			<h2>Contact</h2>
+			<div class="contact-card">
+				<div class="label">Email</div>
+				<div class="value"><a href="mailto:familyboard@klevebring.org">familyboard@klevebring.org</a></div>
+			</div>
+			<p style="margin-top: 16px; color: var(--subtle); font-size: 14px;">
+				I'll usually reply within a few days. Including your iOS version and a screenshot helps a lot.
+			</p>
+		</section>
+
+		<section>
+			<h2>Frequently asked</h2>
+
+			<details>
+				<summary>How do I share a board with someone?</summary>
+				<p>
+					Open the board, tap the <strong>⋯</strong> menu in the top-right, and pick <strong>Share</strong>.
+					You'll get an invite link to send via Messages, AirDrop, or anything else. The recipient taps the
+					link and they're added to the board the moment they sign in.
+				</p>
+				<p>
+					Prefer typing? They can also pick <strong>Join with code</strong> from the same menu and enter the
+					10-character code from the link.
+				</p>
+			</details>
+
+			<details>
+				<summary>An item disappeared. Can I get it back?</summary>
+				<p>
+					Yes — items get archived, not permanently deleted, when you swipe them away. Scroll to the bottom
+					of the board to see the archived (faded, struck-through) section. Swipe right on an archived item
+					and tap the <strong>↶</strong> icon to restore it. It comes back at the bottom of the active list.
+				</p>
+				<p>
+					Permanent deletion is a separate, confirm-required action available from the trash icon on
+					archived items.
+				</p>
+			</details>
+
+			<details>
+				<summary>Why does Sign in with Apple ask for permission?</summary>
+				<p>
+					Family Board uses Sign in with Apple as its only login. Your Apple account ID is the only thing
+					stored — no email is shared unless you choose to. Boards and items live in a Supabase database,
+					accessible only to members of each board.
+				</p>
+			</details>
+
+			<details>
+				<summary>How do I leave a board someone shared with me?</summary>
+				<p>
+					Open the board, tap <strong>⋯</strong>, pick <strong>Leave board</strong>, and confirm. You'll
+					lose access to that board. The owner and other members are unaffected.
+				</p>
+				<p>
+					If you're the <em>owner</em>, the menu shows <strong>Delete board</strong> instead — that removes
+					the board and its items for everyone.
+				</p>
+			</details>
+
+			<details>
+				<summary>Can I reorder items on a board?</summary>
+				<p>
+					Yes. Long-press an item, then drag up or down to a new position. Everyone on the board sees the
+					new order on their next refresh.
+				</p>
+			</details>
+		</section>
+
+		<section>
+			<h2>Privacy</h2>
+			<p>
+				Family Board doesn't track you, doesn't show ads, and doesn't share data with third parties. The data
+				you put on a board is visible only to members of that board.
+			</p>
+			<p>
+				Sign in with Apple is the only login. Your Apple ID identifier is stored to associate boards and items
+				with you. If you sign out, you can sign back in with the same Apple ID and reach your boards again.
+			</p>
+		</section>
+
+		<footer>
+			<p>Family Board for iOS</p>
+			<p>© 2026 Daniel Klevebring</p>
+		</footer>
+	</main>
+</body>
+</html>
